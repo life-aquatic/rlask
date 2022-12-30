@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace rlask_engine
 {
+    /// <summary>
+    /// Database context is relying on Entity Framework Core and SQLite. The connection string is provided 
+    /// using $env:connectionString environment variable. 
+    /// The model relies on 5 data classes: Invoices, Contractors, Customers, InvoiceRows and Products
+    /// </summary>
 
     public class InvoicingContext : DbContext
     {
@@ -94,6 +99,6 @@ namespace rlask_engine
         public string Unit { get; set; }
         public decimal UnitPrice { get; set; }
         public bool IsMaterial { get; set; }
-        public override string ToString() => $"Tuote: {ProductName} kappalehinta: {UnitPrice:N2}/{Unit}";
+        public override string ToString() => $"Tuote: {ProductName}, kappalehinta: {UnitPrice:N2}/{Unit}";
     }
 }

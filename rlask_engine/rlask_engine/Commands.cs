@@ -4,7 +4,10 @@ using System;
 
 namespace rlask_engine
 {
-
+    /// <summary>
+    /// Data manipulation commands. Each command follows the same model: it creates database context, retrieves or saves data
+    /// using LINQ and calls DBContext.SaveChanges() if necessary
+    /// </summary>
     public static class Commands
     {
         public static string ListAllInvoices()
